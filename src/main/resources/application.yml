@@ -1,0 +1,22 @@
+server:
+  port: 8300
+spring:
+  application:
+    name: reservation-service
+
+logging:
+  level:
+    pl.altkom.animalhotel.reservationservice.client: DEBUG
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: full
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
