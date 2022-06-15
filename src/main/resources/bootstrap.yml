@@ -3,3 +3,6 @@ spring:
     config:
       enabled: true
       uri: http://animal-hotel-config-server:8500
+      fail-fast: true
+      retry:
+        max-attempts: 20
