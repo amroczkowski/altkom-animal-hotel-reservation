@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +17,8 @@ import lombok.Setter;
 public class Reservation {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "reservationSeq")
+    @SequenceGenerator(name = "reservationSeq", sequenceName = "reservation_seq", allocationSize = 20)
     private Long id;
 
     private LocalDate startDate;

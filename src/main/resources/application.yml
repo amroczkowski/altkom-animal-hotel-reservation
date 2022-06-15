@@ -3,6 +3,18 @@ server:
 spring:
   application:
     name: reservation-service
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+  datasource:
+    url: jdbc:postgresql://animal-hotel-reservation-postgres:5432/reservationdb
+    username: postgres
+    password: postgres
+  flyway:
+    url: ${spring.datasource.url}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
 
 logging:
   level:
